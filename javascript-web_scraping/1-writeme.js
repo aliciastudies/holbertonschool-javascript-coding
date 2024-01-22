@@ -10,12 +10,11 @@ fs.writeFile(
   {
     encoding: 'utf8',
     flag: 'w',
-    mode: 0o666,
+    mode: 0o666
   },
   (error) => {
     if (error) {
       console.error(error);
-      return;
     }
-  },
+  }
 );
