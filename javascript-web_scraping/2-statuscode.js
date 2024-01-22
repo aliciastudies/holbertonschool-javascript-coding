@@ -1,7 +1,15 @@
 #!/usr/bin/node
 
 const request = require('request');
-const filePath = process.argv[2];
+const filePath = {
+    method: 'GET',
+    url: process.argv[2]
+};
+
 request(filePath, function (error, response, body) {
-  console.log('code:', response.statusCode);
+    if (error) {
+        console.error(error);
+    }
+  console.log(`code: ${response.statusCode}`);
 });
+
