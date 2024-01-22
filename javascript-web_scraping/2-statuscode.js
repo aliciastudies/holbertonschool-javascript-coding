@@ -9,6 +9,6 @@ const filePath = {
 request(filePath, function (error, response, body) {
   if (error) {
     console.error(error);
-    }
+  }
   console.log(`code: ${response.statusCode}`);
 });
