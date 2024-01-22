@@ -17,6 +17,5 @@ fs.writeFile(
       console.error(error);
       return;
     }
-    console.log(content);
   },
 );
