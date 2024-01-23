@@ -13,12 +13,12 @@ request(url, (error, response, body) => {
   try {
     const movieData = JSON.parse(body).results;
     let count = 0;
-    for (const movie  of movieData) {
-        for (const char of movie.characters) {
-            if (char.includes(`${character}`)) {
-                count = count + 1;
-            }
+    for (const movie of movieData) {
+      for (const char of movie.characters) {
+        if (char.includes(`${character}`)) {
+          count = count + 1;
         }
+      }
     }
     console.log(count);
   } catch (parseError) {
