@@ -16,5 +16,4 @@ request(url, (error, response, body) => {
   } catch (parseError) {
     console.log(`Error parsing JSON: ${parseError}`);
   }
-
 });
