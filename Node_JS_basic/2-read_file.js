@@ -9,7 +9,7 @@ function countStudents(filePath) {
     const studentsSWE = [];
 
     for (const line of studentLines) {
-      const [firstname, lastname, age, field] = line.split(',');
+      const [firstname, , , field] = line.split(',');
 
       if (field === 'CS') {
         studentsCS.push(firstname);
