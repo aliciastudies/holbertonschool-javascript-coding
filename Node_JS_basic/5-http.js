@@ -31,23 +31,25 @@ async function countStudents(filePath) {
     throw new Error('Cannot load the database');
   }
 }
+
 const port = 1245;
 
-const app = http
-  .createServer(async (request, response) => {
-    if (request.url === '/') {
-      response.end('Hello Holberton School!');
-    } else if (request.url === '/students') {
-      try {
-        const databaseName = await countStudents(process.argv[2]);
-        response.write(`This is the list of our students\n${databaseName}`);
-        response.end();
-      } catch (error) {
-        response.write(`This is the list of our students\n${error.message}`);
-        response.end();
-      }
+const app = http.createServer(async (request, response) => {
+  if (request.url === '/') {
+    response.write('Hello Holberton School!');
+    response.end();
+  } else if (request.url === '/students') {
+    try {
+      const databaseName = await countStudents(process.argv[2]);
+      response.write(`This is the list of our students\n${databaseName}`);
+      response.end();
+    } catch (error) {
+      response.write(`This is the list of our students\n${error.message}`);
+      response.end();
     }
-  })
-  .listen(port);
+  }
+});
+
+app.listen(port);
 
 module.exports = app;
