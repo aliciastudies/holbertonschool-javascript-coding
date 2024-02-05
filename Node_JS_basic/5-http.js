@@ -22,9 +22,9 @@ async function countStudents(filePath) {
     }
     return `Number of students: ${
       studentsCS.length + studentsSWE.length
-    }\n Number of students in CS: ${studentsCS.length}. List: ${studentsCS.join(
+    }\nNumber of students in CS: ${studentsCS.length}. List: ${studentsCS.join(
       ', ',
-    )}\n Number of students in SWE: ${
+    )}\nNumber of students in SWE: ${
       studentsSWE.length
     }. List: ${studentsSWE.join(', ')}`;
   } catch (error) {
